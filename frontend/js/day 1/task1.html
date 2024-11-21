@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>task1</title>
+</head>
+<body>
+    
+
+
+    <script>
+      let text= (num,message) =>{ document.write("<h"+num+">"+message+"</h"+num+">")};
+        
+       let user_input =prompt("Enter your message" , "Hello javasctript");
+        let message=user_input ? user_input :"Hello world";
+        for(let i=1; i<=6; i++){
+            text(i,message);
+        }
+    </script>
+</body>
+</html>
