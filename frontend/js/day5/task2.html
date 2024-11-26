@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typing Message</title>
+</head>
+<body>
+    <button id="openMessage">Show Typing Message</button>
+
+    <script>
+        document.getElementById('openMessage').addEventListener('click', () => {
+            var childWindow = window.open('', '', 'width=300,height=150');
+            
+            var message = "This is a typing message...";
+            var index = 0;
+            var createTypeInterval ;
+            if(childWindow){
+                createTypeInterval= setInterval(()=>{
+                    childWindow.document.body.innerHTML=`<h3>${message.slice(0,index)}</h3>`;
+                    if(index<message.length){
+                        index++;
+                        }
+                    else{
+                        clearInterval(createTypeInterval);
+                        setTimeout(() => {
+                            childWindow.close();
+                        }, 3000);
+                    }
+                },100);
+                
+            }
+  
+
+      
+        });
+    </script>
+</body>
+</html>

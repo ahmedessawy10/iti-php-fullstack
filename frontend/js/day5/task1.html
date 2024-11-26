@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flying Child Window</title>
+</head>
+<body>
+    <button id="startButton" onclick="openChildWindow()">Open  Window</button>
+    <button id="stopButton"onclick="stopChildWindow()">Stop window</button>
+    <button id="moveTo" onclick="moveTo(400,200)">move to window</button>
+    <button id="stopmove" onclick="stopMove()">stop window</button>
+
+    <script>
+        var childWindow;
+        var intervalId;
+
+        // Function to open the child window
+        function openChildWindow() {
+            if (!childWindow  || childWindow.closed) {
+                childWindow = window.open('', '', 'width=400,height=100');
+                childWindow.document.body.innerHTML = '<h3>Child Window</h3>';
+            }
+        }
+
+           function stopChildWindow(){
+           
+            if(childWindow ){
+                childWindow.close();
+            }else{
+                alert('child window is not open');
+            }
+
+        }
+        var intervalmoveTo;
+        function moveTo(x,y){
+            if(childWindow){
+                childWindow.focus();
+                var currentX=childWindow.screenX;
+                var currentY=childWindow.screenY;
+                var step=10;
+                 intervalmoveTo=setInterval(() => {
+                if (currentX !== x) {
+                currentX = (x > currentX) ?  currentX+step : currentX-step;
+            }
+            if (currentY !== y) {
+                currentY = (y > currentY) ? currentY+step : currentY-step;
+            }
+
+            childWindow.moveTo(currentX, currentY);
+
+
+
+            if (currentX === x && currentY === y) {
+                clearInterval(intervalmoveTo);
+                    
+                }
+            }, 100);
+                
+            }else{
+                alert('child window is not open');
+            }
+           
+        }
+
+
+        function stopMove(){
+
+            if(intervalmoveTo){
+
+                clearInterval(intervalmoveTo);
+            }
+            childWindow.focus();
+
+        }
+
+          
+
+      
+    </script>
+</body>
+</html>

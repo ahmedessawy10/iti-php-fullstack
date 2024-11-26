@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sort numbers </title>
+</head>
+<body>
+    
+    <script>
+
+var user_input;
+var number_array=[];
+alert("  enter 5 numer  it can be one  number at once or 1,2,3,4,5 at once "); 
+do{
+
+user_input  = prompt("Enter a number , array know has "+number_array.length+" numbers");
+
+if(user_input.indexOf(',')){
+var arr=user_input.split(',');
+    for(var i=0;i<arr.length;i++){
+        
+        isFinite(parseInt(arr[i]))?number_array.push(parseInt(arr[i])):alert("value must be a number");
+
+} 
+}else{
+    isFinite(arr[i])?number_array.push(user_input):alert("value must be a number");
+
+}
+}while(number_array.length <5)
+
+
+var sortType= prompt('do you want sort number in  asc  or desc' ,'asc' );
+
+if(sortType && sortType.toLowerCase()=='asc'){
+    document.write(number_array.sort((a,b)=>a-b));
+}else{
+    document.write(number_array.sort((a,b)=>b-a));
+
+}
+
+    </script>
+
+</body>
+</html>

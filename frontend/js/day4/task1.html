@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sum three number</title>
+</head>
+<body>
+    
+
+    <script>
+        var numbers=[];
+        function multArray(nums){
+            var mult=1;
+       for(var i=0;i<nums.length;i++){
+       
+        mult*=nums[i];
+        
+       }
+       return mult;
+        }
+        function divideArray(nums){
+            var divide=nums[0];
+       for(var i=1;i<nums.length;i++){
+       
+        divide/=nums[i];
+        
+       }
+       return divide;
+        } 
+
+        function sumArray(...nums){
+            var sum=0;
+       for(var i=0;i<nums.length;i++){
+         sum+=nums[i];
+       }
+       return sum;
+
+        }
+
+
+        do{
+         numbers.push(+prompt('enter a number to be sum,multi and divide')); 
+        }while(numbers.length<3);
+
+        document.write( "sum is "+sumArray(...numbers)+"<br>");
+        document.write( "multiplication is "+multArray(numbers)+"<br>");
+        document.write( "dvision is "+ divideArray(numbers).toFixed(2)+"<br>");
+
+
+    </script>
+</body>
+</html>

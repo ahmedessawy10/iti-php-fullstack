@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>task1 </title>
+    <style>
+        .btn{
+            background-color: #074081;
+            margin-bottom: 4rem;
+            font-size: 2rem;
+            padding:2rem;
+            border:none;
+            border-radius: 20px ;
+            color:#fff;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div style="position :fixed; top:50%;left:50%;transform: translate(-50%,-50%);display:flex;align-items: center;justify-content: center;width: 100%; flex-direction: column;">
+
+  
+    <button class="btn" id="task1"  >task1</button>
+    <button class="btn" id="task2" >task2</button>
+    <button class="btn" id="task3" >task3</button>
+
+</div>
+
+
+
+</body>
+
+<script>
+
+
+console.log(x);
+var task1=document.getElementById('task1');
+var task2=document.getElementById('task2');
+var task3=document.getElementById('task3');
+
+task1.addEventListener('click',function(){
+
+    var radius= +prompt('enter your circle radius');
+    if(isFinite(radius)){
+        var area=2*Math.PI*radius;
+        alert('the circle area is '+area.toFixed(2));
+    }else{
+        alert('radius must be a number');
+    }
+});
+task2.addEventListener('click',function (){
+    var root= +prompt('enter value that want to get squre root');
+    if(isFinite(root)){
+        var sqrt=Math.sqrt(root);
+        alert('the squre root of  ' +root + 'is'+ sqrt);
+    }else{
+        alert('value must be a number');
+    }
+})
+task3.addEventListener('click',function (){
+    var angle= +prompt('enter the angle that want to calc value');
+    if(isFinite(angle)){
+        // var cos_angle=Math.cos(angle/180);
+        var cos_angle=Math.cos(Math.PI*angle/180);
+        // console.log(Math.PI);
+        // alert('the cos angle of  ' +angle + 'is'+ cos_angle);
+       document.write('the cos angle of  ' + angle + ' is '+ cos_angle);
+  
+
+    }else{
+        alert('value must be a number');
+    }
+})
+
+
+</script>
+</html>
