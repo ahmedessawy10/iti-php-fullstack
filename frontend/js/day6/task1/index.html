@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>create register form</title>
+    <style>
+    form{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+ 
+    input{
+       
+        margin:20px 10px;
+        border-radius: 12px;
+        padding:10px;
+
+    }
+    .form-fields.label{
+        
+        text-align: left;
+    }
+    input[type='submit']{
+        background-color:rgba(11, 9, 130, 0.781);
+        font-weight: bold;
+        color:#fff;
+        border:none;
+        width:fit-content;
+        border-radius: 20px;
+        padding:18px 34px;
+
+    }
+    .display{
+text-align: center;
+ padding:2px;
+ font-size: 2rem;
+ position: fixed;
+ top: 0;
+ left: 5px;
+font-size: 1.2rem;
+    }
+    
+
+    </style>
+</head>
+<body>
+ 
+
+   
+   
+
+    <script>
+     
+    var container= document.createElement('div');
+
+    container.className='container';
+    container.style=['display:flex','align-items:center','justify-content:center','flex-direction:column'];
+    container.style.width='400px';
+    container.style.margin='100px auto';
+    container.style.minHeight='300px';
+    container.style.border='1px solid #333';
+    container.style.borderRadius='12px';
+    container.style.padding='20px';
+
+    var Form=document.createElement('form');
+    
+    Form.action="";
+    Form.taget='_SELF';
+    Form.method="GET";
+    //add user name
+    function addFormElements(name ,type="text",containerElement ,needLebal=true,value=[]){
+
+        var  inputField=document.createElement('div');
+        inputField.className='form-fields';
+        var input =document.createElement('input');
+        input.className='input-fields';
+        input.id=name|| "text";
+        
+        input.type= type || "text";
+
+       
+
+
+
+
+        if(needLebal){
+            input.name=name|| "text";
+            var label =document.createElement('label');
+        label.for="#"+input.id;
+        label.innerText=name;
+
+        inputField.appendChild(label);
+        }
+     
+
+
+
+        inputField.appendChild(input);
+        containerElement.appendChild(inputField);
+    }
+    addFormElements('user_name','text',Form);
+    addFormElements('user_email','email',Form);
+    addFormElements('user_gender','text',Form);
+    addFormElements('user_mobile','text',Form);
+    addFormElements('register','submit',Form,false);
+
+    container.appendChild(Form);
+    document.body.appendChild(container);
+    
+    var query= decodeURIComponent(location.search) ;
+    var userDataArray=[];
+    if(query){
+       var queryArray= query.replace('?','').split('&');
+     for(i=0;i<queryArray.length;i++){
+        var key=queryArray[i].split("=")[0];
+        var value=queryArray[i].split("=")[1];
+        userDataArray[key]=value;
+
+     }
+
+var result=document.createElement('div');
+result.className="display";
+
+     for (var userEle in userDataArray) {
+        var ele = document.createElement('p');
+        ele.className="data";
+        ele.innerHTML = `<span>${userEle}: ${userDataArray[userEle]}</span`;
+            result.appendChild(ele);
+    
+     }
+     document.body.appendChild(result);
+    }
+    </script>
+</body>
+
+</html>

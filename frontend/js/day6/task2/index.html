@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>form of user data</title>
+    <link rel="stylesheet" href="./css/indexStyle.css" />
+  </head>
+  <body>
+    <form action="./display.html" method="get">
+      <div class="form-fields">
+        <label for="name">user name</label>
+        <input type="text" name="name" id="name" />
+      </div>
+      <div class="form-fields">
+        <label for="email">user email</label>
+        <input type="email" name="email" id="email" />
+      </div>
+      <div class="form-fields">
+        <label for="age">user age</label>
+        <input type="number" name="age" id="age" />
+      </div>
+      <div class="form-fields">
+        <label for="phone">user phone</label>
+        <input type="text" name="phone" id="phone" />
+      </div>
+
+      <h3>user gender</h3>
+      <div class="collect-gender">
+        <div class="form-fields">
+          <input type="radio" name="gender" id="gender" value="male" />
+          <label for="gender"><img src="./imgs/male.jpg" /></label>
+        </div>
+        <div class="form-fields">
+          <input type="radio" name="gender" id="gender" value="female" />
+          <label for="gender"><img src="./imgs/female.jpg" /> </label>
+        </div>
+      </div>
+      <div class="form-fields">
+        <label for="color">user color</label>
+        <select type="text" name="color" id="color">
+          <option value="red">red</option>
+          <option value="green">green</option>
+          <option value="blue">blue</option>
+          <option value="black">black</option>
+        </select>
+      </div>
+      <div class="form-fields">
+        <button type="submit">send</button>
+      </div>
+    </form>
+  </body>
+</html>

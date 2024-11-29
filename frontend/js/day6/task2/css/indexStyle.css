@@ -1,0 +1,68 @@
+form {
+  width: 400px;
+  margin: 10px auto;
+  border: 2px solid #333;
+  padding: 10px 8px;
+  border-radius: 12px;
+}
+
+form .form-fields {
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+form .form-fields label {
+  margin: 6px;
+  min-width: 80px;
+}
+form .form-fields input {
+  flex: 1;
+  font-size: 20px;
+}
+form .form-fields select {
+  flex: 1;
+  font-size: 20px;
+}
+
+form .form-fields option[value="red"] {
+  color: red;
+}
+form .form-fields option[value="blue"] {
+  color: blue;
+}
+form .form-fields option[value="green"] {
+  color: green;
+}
+form .form-fields option[value="black"] {
+  color: black;
+}
+form h3 {
+  text-align: left;
+  font-weight: normal;
+  font-size: 17px;
+}
+form .collect-gender {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+form .collect-gender img {
+  width: 100px;
+}
+
+form button {
+  padding: 10px 15px;
+  background: #666;
+  color: #fff;
+  border-radius: 12px;
+  font-size: 20px;
+  letter-spacing: 3px;
+  border: none;
+  box-shadow: 2px 3px #000;
+  cursor: pointer;
+  transition: 0.7s;
+}
+form button:focus {
+  box-shadow: none;
+}
