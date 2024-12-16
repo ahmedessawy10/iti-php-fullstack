@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>canvas</title>
+    <style>
+      .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        width: 100%;
+      }
+
+      #create {
+        background-color: rgba(11, 9, 130, 0.781);
+        font-weight: bold;
+        color: #fff;
+        border: none;
+        border-radius: 20px;
+        padding: 18px 34px;
+      }
+      #color {
+        width: 100px;
+        height: 40px;
+      }
+
+      #myCanvas {
+        width: 80%;
+        height: 500px;
+        border: 3px solid #0f208c;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 style="text-align: center">create canvas by js</h1>
+    <div class="container">
+      <div style="display: flex; align-items: center; gap: 20px">
+        <input type="color" name="color" id="color" />
+        <button id="create" onclick="createCanvas()">create canvas</button>
+      </div>
+
+      <canvas id="myCanvas" ></canvas>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
