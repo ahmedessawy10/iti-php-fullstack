@@ -1,0 +1,116 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  background-color: #8ae0e1;
+  /* background-color: #fff; */
+  color: #fff;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: 120px 1fr 120px;
+  gap: 10px 20px;
+  grid-template-areas:
+    "header header header header header"
+    "section section section section section"
+    "footer footer footer footer footer";
+}
+footer,
+header {
+  background: #63af95;
+  height: 120px;
+}
+header {
+  grid-area: header;
+}
+
+footer {
+  grid-area: footer;
+  /* grid-column: 1/-1; */
+}
+
+section {
+  gap: 20px 30px;
+  padding-left: 10px;
+  padding-right: 10px;
+  /* grid-row: 2/4;
+  grid-column: 1/-1; */
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 1fr;
+  grid-area: section;
+  grid-template-areas: "aside article article article";
+}
+aside {
+  background: #7fac59;
+  background: linear-gradient(to right, rgb(103, 202, 23), #7fac59);
+  /* grid-column: 1/2; */
+  grid-area: aside;
+}
+article {
+  background: linear-gradient(#cb764d, rgb(239, 191, 102));
+  /* grid-column: 2/5; */
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 200px 1fr;
+  grid-template-areas:
+    "title "
+    "images";
+  grid-area: article;
+}
+h2 {
+  text-align: center;
+  grid-area: title;
+}
+.images {
+  grid-column: 1/-1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 200px;
+  algin-items: end;
+  gap: 20px;
+  grid-area: images;
+}
+h2 {
+}
+.image {
+  background: linear-gradient(rgb(228, 89, 19), rgb(223, 177, 93));
+  width: 100%;
+  height: 150px;
+}
+
+header,
+aside,
+.image,
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* @media (max-width: 760px) {
+  body {
+    font-size: 1.5rem;
+  }
+  header,
+  footer {
+    height: 150px;
+  }
+  .images {
+    flex-direction: column;
+    align-items: center;
+  }
+  .image {
+    width: 80%;
+  }
+  aside {
+    display: none;
+  }
+  article {
+    justify-content: flex-start;
+  }
+} */
