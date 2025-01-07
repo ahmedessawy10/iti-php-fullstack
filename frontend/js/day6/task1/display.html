@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>display user data</title>
+  </head>
+  <body></body>
+
+  <script>
+    var userData = location.search.replace("?", "").split("&");
+    if (userData) {
+      for (var i = 0; i < userData.length; i++) {
+        var data = userData[i].split("=");
+        document.write(`<p>${data[0]}:${decodeURIComponent(data[1])}</p>`);
+      }
+    }
+  </script>
+</html>

@@ -32,6 +32,9 @@ function printData(){
         ? `<img src="./imgs/male.jpg" alt="Male">` 
         : `<img src="./imgs/female.jpg" alt="Female">`;
     q += ` Hi <span style='color:${arrayOfDatacookies["color"]}'>${arrayOfDatacookies["name"]}</span>, you have visited this site <span style='color:${arrayOfDatacookies["color"]}'>${arrayOfDatacookies["count"]}</span> times.<br>`;
+    for(var x in arrayOfDatacookies){
+        q += `${x} : ${arrayOfDatacookies[x]}<br>`;
+    }
 
                 
         mydiv.innerHTML=q;
