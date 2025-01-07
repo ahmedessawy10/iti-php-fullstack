@@ -1,4 +1,4 @@
-  let x = 5;
+let x = 5;
 let y = 6;
 console.log("before x", x);
 console.log("before y", y);
@@ -30,17 +30,17 @@ console.log("max:" + max + " & min" + min);
 
 var fruits = ["apple", "strawberry", "banana", "orange", "mango"];
 
-// check if all string in array    //1
+// check if all string in array    //3-1
 let is_all_string = fruits.every((fruit) => typeof fruit == "string");
 console.log(is_all_string);
 
-//some_start_with_a    //2
+//some_start_with_a    //3-2
 let is_some_start_with_a = fruits.some(
   (fruit) => typeof fruit == "string" && /^a.*/.test(fruit)
 );
 console.log(is_some_start_with_a);
 
-//3
+//3-3
 
 let new_array_start_with_s_b = fruits.filter(
   (fruit) =>
@@ -48,7 +48,7 @@ let new_array_start_with_s_b = fruits.filter(
 );
 console.log(new_array_start_with_s_b);
 
-//4
+//3-4
 
 let new_array_message=fruits.map(fruit=>`i like ${fruit}`);
 
